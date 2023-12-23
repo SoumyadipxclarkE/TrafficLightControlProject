@@ -1,2 +1,44 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+/* To Control The Lights Step By Step
+And Know Each Light's Duration */
+
+import java.util.Scanner;
+
+public class TrafficLightControl
+{
+
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.println("Enter the current color of the light (red, yellow, or green): ");
+        String currentColor = scanner.nextLine();
+
+
+        String nextColor;
+        int duration;
+
+        switch (currentColor)
+        {
+            case "red":
+                nextColor = "green";
+                duration = 2000;
+                break;
+            case "yellow":
+                nextColor = "red";
+                duration = 3000;
+                break;
+            case "green":
+                nextColor = "yellow";
+                duration = 1500;
+                break;
+            default:
+                System.out.println("Invalid color entered.");
+                return;
+        }
+
+
+        System.out.println("The next color of the light is: " + nextColor);
+        System.out.println("Duration: " + duration + " milliseconds");
+    }
+}
